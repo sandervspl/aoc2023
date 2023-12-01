@@ -15,8 +15,7 @@ const data = inputFile().split("\n");
 // 7pqrstsixteen`.split("\n");
 
 // prettier-ignore
-const units = ["one", "two", "three", "four", "five", "six", "seven", "eight",
-"nine"];
+const units = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 
 let sum = 0;
 for (const line of data) {
