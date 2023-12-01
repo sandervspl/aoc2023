@@ -1,11 +1,11 @@
 /**
  * https://adventofcode.com/2023/day/1#part2
  */
-import "services/array";
-import "services/math";
-import "services/input-file";
+import 'services/array';
+import 'services/math';
+import 'services/input-file';
 
-const data = inputFile().split("\n");
+const data = inputFile().split('\n');
 // const data = `two1nine
 // eightwothree
 // abcone2threexyz
@@ -21,13 +21,13 @@ let sum = 0;
 for (const line of data) {
   const nums: number[] = [];
 
-  let str = "";
+  let str = '';
   for (let i = 0; i < line.length; i++) {
     const char = line[i];
 
     if (/[0-9]/.test(char!)) {
       nums.push(Number(char));
-      str = "";
+      str = '';
       continue;
     }
 
