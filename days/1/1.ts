@@ -19,7 +19,7 @@ for (const line of data) {
     continue;
   }
 
-  sum += +("" + nums.first() + nums.last());
+  sum += Number(String(nums.first()) + String(nums.last()));
 }
 
 console.log(`Answer:\n`, sum);
