@@ -24,15 +24,14 @@ for (const line of data) {
   let str = "";
   for (let i = 0; i < line.length; i++) {
     const char = line[i];
-    str += char;
 
-    const numInLine = str.match(/[0-9]/)?.map((val) => Number(val));
-    if (numInLine) {
-      nums.push(numInLine[0]!);
+    if (/[0-9]/.test(char!)) {
+      nums.push(Number(char));
       str = "";
       continue;
     }
 
+    str += char;
     for (let u = 0; u < units.length; u++) {
       const unit = units[u];
       if (str.includes(unit!)) {
