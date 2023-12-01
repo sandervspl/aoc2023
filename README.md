@@ -4,28 +4,30 @@ https://adventofcode.com/2023
 
 ## How to use
 
-1. Stick to the `days\<day#>\<part#>.js` structure
-2. Create your `input` file (no extension) in the day directory
-3. Write this in your terminal to start
+### Setup
 
-```bash
-$ npm run start day# part#
-```
+1. Go to adventofcode.com and sign in
+2. Get your session token from the console: Application -> Cookies -> https://adventofcode.com -> session -> copy the `Value`
+3. Add session to `SESSION` in `.env`
+4. Update the year in `.env` if needed
 
-For day 1 / part 1 that would be `npm run start 1 1`
+### Development
+
+1. run `bun run init`
+2. run `bun --watch <DAY>/<PART>.ts` (e.g. `bun --watch 1/1.ts`)
 
 ### input data
 
 To get the input data in your code you can use the global `inputFile` function
 
-```js
+```ts
 const data = inputFile();
 ```
 
 This will return an array of the input data split by newline.
 If you want more control you can do that in multiple ways
 
-```js
+```ts
 // Split by ":"
 const data = inputFile("input", ":");
 
@@ -36,13 +38,6 @@ const data = inputFile("input", false);
 const data = inputFile("input2");
 ```
 
-### services
+## services
 
 All service files are injected globally as the name the function is exported as.
-
-```js
-// services/addOne.js
-export function addOne() { ... }
-
-// This would be globally available in your code as "addOne"
-```

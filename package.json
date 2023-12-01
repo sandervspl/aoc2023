@@ -2,15 +2,19 @@
   "name": "aoc2023",
   "version": "1.0.0",
   "description": "https://adventofcode.com/2023",
-  "main": "main.js",
-  "scripts": {
-    "start": "node main.js"
-  },
-  "keywords": [],
   "author": "Sander Vispoel",
   "license": "ISC",
+  "private": true,
+  "scripts": {
+    "init": "bun scripts/init.ts",
+    "dev": "bun --watch scripts/start.ts"
+  },
   "devDependencies": {
-    "esbuild": "0.14.1",
-    "eslint": "8.4.0"
-  }
+    "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
+    "bun-types": "^1.0.14",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.2"
+  },
+  "module": "index.ts",
+  "type": "module"
 }
