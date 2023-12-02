@@ -1,5 +1,5 @@
-import fs from "node:fs";
-import * as prettier from "prettier";
+import fs from 'node:fs';
+import * as prettier from 'prettier';
 
 // Get current date day
 const now = new Date();
@@ -14,19 +14,14 @@ if (fs.existsSync(`./days/${day}`)) {
 const dir = `./days/${day}`;
 fs.mkdirSync(dir);
 
-const prettierConfig = await import("../prettier.config").then(
-  (m) => m.default,
-);
+const prettierConfig = await import('../prettier.config.mjs').then((m) => m.default);
 
 console.log(`Fetching input from adventofcode.com/${process.env.YEAR}...`);
-const response = await fetch(
-  `https://adventofcode.com/${process.env.YEAR}/day/${day}/input`,
-  {
-    headers: {
-      cookie: `session=${process.env.SESSION}`,
-    },
+const response = await fetch(`https://adventofcode.com/${process.env.YEAR}/day/${day}/input`, {
+  headers: {
+    cookie: `session=${process.env.SESSION}`,
   },
-);
+});
 if (response.status !== 200) {
   throw new Error(`(${response.status}) ${response.statusText}`);
 }
@@ -35,9 +30,9 @@ await Bun.write(`${dir}/input`, input);
 
 for await (const part of [1, 2]) {
   const file = `${dir}/${part}.ts`;
-  fs.closeSync(fs.openSync(file, "w"));
+  fs.closeSync(fs.openSync(file, 'w'));
 
-  const partAnchor = part == 2 ? "#part2" : "";
+  const partAnchor = part == 2 ? '#part2' : '';
   const content = `
   /**
    * https://adventofcode.com/${process.env.YEAR}/day/${day}${partAnchor}
@@ -50,7 +45,7 @@ for await (const part of [1, 2]) {
   `;
 
   const formatted = await prettier.format(content, {
-    parser: "babel",
+    parser: 'babel',
     ...prettierConfig,
   });
   await Bun.write(file, formatted);
