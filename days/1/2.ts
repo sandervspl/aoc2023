@@ -5,7 +5,7 @@ import 'services/array';
 import 'services/math';
 import 'services/input-file';
 
-const data = inputFile().split('\n');
+const data = inputFile(1).split('\n');
 // const data = `two1nine
 // eightwothree
 // abcone2threexyz

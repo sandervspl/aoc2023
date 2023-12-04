@@ -41,7 +41,7 @@ for await (const part of [1, 2]) {
     import "services/math";
     import "services/input-file";
     
-    const data = inputFile();
+    const data = inputFile(${day});
   `;
 
   const formatted = await prettier.format(content, {

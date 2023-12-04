@@ -1,2 +1,1 @@
-declare function inputFile(file: string): string;
-declare function inputFile(): string;
+declare function inputFile(day: number, file?: string): string;
