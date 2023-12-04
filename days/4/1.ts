@@ -15,9 +15,9 @@ const data = inputFile(4).split('\n');
 
 let solution = 0;
 
-for (const line of data) {
-  const winningNumbers = line.slice(7).split(' | ')[0]!.split(/ +/g).filter(Boolean).map(Number);
-  const numbers = line.slice(7).split(' | ')[1]!.split(/ +/g).filter(Boolean).map(Number);
+for (const card of data) {
+  const winningNumbers = card.slice(7).split(' | ')[0]!.split(/ +/g).filter(Boolean).map(Number);
+  const numbers = card.slice(7).split(' | ')[1]!.split(/ +/g).filter(Boolean).map(Number);
 
   const matches = numbers.filter((num) => winningNumbers.includes(num));
 
